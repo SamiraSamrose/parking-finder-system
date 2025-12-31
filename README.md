@@ -8,7 +8,7 @@ The Parking Finder System is a comprehensive parking management solution that le
 
 ## Links
 - **Sorce Code**:
-- **Video Demo**:
+- **Video Demo**: https://youtu.be/acrzkcN8YpE
 - **Colab Notebook**: https://colab.research.google.com/drive/18nkYfGweBMTkAe0fZwNCtyhfCIEcHk2K?usp=sharing
 
 ## Features
