@@ -60,14 +60,23 @@ The Parking Finder System is a comprehensive parking management solution that le
 **Streaming:** Confluent Kafka with Avro, JSON, Protobuf serialization
 
 **Models Trained:** 
+
 XGBoost Classifier (occupancy prediction), 
+
 XGBoost Regressor (real-time inference), 
+
 LSTM (time-series forecasting), 
+
 Transformer (attention-based pattern recognition), 
+
 Random Forest (ensemble baseline), 
+
 LightGBM (gradient boosting), 
+
 GNN (graph neural network for spatial prediction), 
+
 Reward Model (RLHF training), 
+
 BERT (prompt injection detection)
 
 **Data Integrations:** UCI Machine Learning Repository (Metro Interstate Traffic Dataset 48,204 records), SF Open Data API (parking inventory), simulated IoT sensor streams, CCTV edge processing feeds, user GPS telemetry
