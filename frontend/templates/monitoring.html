@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Dashboard - Parking Finder</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Monitoring Dashboard</h1>
+            <p class="subtitle">Real-Time System Monitoring and Observability</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/analytics" class="nav-link">Analytics</a>
+            <a href="/monitoring" class="nav-link active">Monitoring</a>
+        </nav>
+
+        <div class="metrics-summary">
+            <div class="metric-card">
+                <div class="metric-label">System Uptime</div>
+                <div class="metric-value" id="uptime">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Total Requests</div>
+                <div class="metric-value" id="totalRequests">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Success Rate</div>
+                <div class="metric-value" id="successRate">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Avg Latency</div>
+                <div class="metric-value" id="avgLatency">-</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="startMonitoring()">Start Monitoring</button>
+            <button class="btn btn-secondary" onclick="stopMonitoring()">Stop Monitoring</button>
+            <button class="btn btn-warning" onclick="simulateMonitoring()">Simulate Data</button>
+        </div>
+
+        <!-- LLM Performance Metrics -->
+        <div class="card full-width">
+            <h2>LLM Performance Metrics</h2>
+            <div class="charts-grid">
+                <div id="llmLatencyChart"></div>
+                <div id="llmTokenUsageChart"></div>
+                <div id="llmSuccessRateChart"></div>
+            </div>
+        </div>
+
+        <!-- Prediction Accuracy Monitoring -->
+        <div class="card full-width">
+            <h2>Prediction Accuracy Monitoring</h2>
+            <div class="charts-grid">
+                <div id="accuracyOverTimeChart"></div>
+                <div id="confidenceDistributionChart"></div>
+            </div>
+        </div>
+
+        <!-- Hallucination Detection -->
+        <div class="card full-width">
+            <h2>Hallucination Detection</h2>
+            <button class="btn btn-secondary" onclick="testHallucinationDetection()">Test Detection</button>
+            <div id="hallucinationScoreChart"></div>
+            <div id="hallucinationEventsTable" class="table-container"></div>
+        </div>
+
+        <!-- Prompt Injection Detection -->
+        <div class="card full-width">
+            <h2>Security Monitoring - Prompt Injection</h2>
+            <div class="form-group">
+                <label>Test Input:</label>
+                <textarea id="testPromptInput" rows="3" placeholder="Enter text to test for prompt injection..."></textarea>
+            </div>
+            <button class="btn btn-warning" onclick="testPromptInjection()">Test Injection Detection</button>
+            <div id="injectionResults" class="results-container"></div>
+            <div id="securityEventsChart"></div>
+        </div>
+
+        <!-- Kafka Streaming Metrics -->
+        <div class="card full-width">
+            <h2>Kafka Streaming Metrics</h2>
+            <div class="form-group">
+                <label>Stream Type:</label>
+                <select id="streamType">
+                    <option value="magnetometer">IoT Magnetometer</option>
+                    <option value="cctv">CCTV Edge Processing</option>
+                    <option value="gps">User GPS Events</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="simulateStream()">Simulate Stream</button>
+            <div class="charts-grid">
+                <div id="streamThroughputChart"></div>
+                <div id="streamLatencyChart"></div>
+            </div>
+        </div>
+
+        <!-- Voice Interface Metrics -->
+        <div class="card full-width">
+            <h2>Voice Interface Metrics</h2>
+            <button class="btn btn-secondary" onclick="simulateVoiceQueries()">Simulate Voice Queries</button>
+            <div class="charts-grid">
+                <div id="agentDistributionChart"></div>
+                <div id="voiceLatencyChart"></div>
+            </div>
+        </div>
+
+        <!-- Google Integration Metrics -->
+        <div class="card full-width">
+            <h2>Google Cloud Integration Metrics</h2>
+            <div class="charts-grid">
+                <div id="multiAgentLatencyChart"></div>
+                <div id="bigqueryPerformanceChart"></div>
+            </div>
+        </div>
+
+        <!-- System Alerts -->
+        <div class="card full-width">
+            <h2>System Alerts</h2>
+            <div id="alertsTable" class="table-container"></div>
+        </div>
+
+        <footer>
+            <p>Monitoring Dashboard | Real-Time Observability</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/monitoring.js"></script>
+</body>
+</html>

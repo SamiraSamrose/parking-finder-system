@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Finder System - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Parking Finder System</h1>
+            <p class="subtitle">Intelligent Parking Space Detection with AI/ML Integration</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="/" class="nav-link active">Dashboard</a>
+            <a href="/analytics" class="nav-link">Analytics</a>
+            <a href="/monitoring" class="nav-link">Monitoring</a>
+        </nav>
+
+        <div class="status-bar" id="statusBar">
+            <div class="status-item">
+                <span class="status-label">System Status:</span>
+                <span class="status-value" id="systemStatus">Initializing...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Last Update:</span>
+                <span class="status-value" id="lastUpdate">-</span>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="initializeSystem()">Initialize System</button>
+            <button class="btn btn-secondary" onclick="refreshData()">Refresh Data</button>
+        </div>
+
+        <div class="grid-container">
+            <!-- Parking Search Section -->
+            <div class="card">
+                <h2>Find Parking Spots</h2>
+                <div class="form-group">
+                    <label>Latitude:</label>
+                    <input type="number" id="searchLat" value="37.7749" step="0.0001">
+                </div>
+                <div class="form-group">
+                    <label>Longitude:</label>
+                    <input type="number" id="searchLon" value="-122.4194" step="0.0001">
+                </div>
+                <div class="form-group">
+                    <label>Max Distance (km):</label>
+                    <input type="number" id="searchDistance" value="2" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Max Rate ($/hr):</label>
+                    <input type="number" id="searchRate" value="10" step="1">
+                </div>
+                <button class="btn btn-primary full-width" onclick="searchParking()">Search</button>
+                <div id="searchResults" class="results-container"></div>
+            </div>
+
+            <!-- Zone Statistics Section -->
+            <div class="card">
+                <h2>Zone Statistics</h2>
+                <button class="btn btn-secondary full-width" onclick="loadZoneStats()">Load Statistics</button>
+                <div id="zoneStatsChart"></div>
+                <div id="zoneStatsTable" class="table-container"></div>
+            </div>
+
+            <!-- Recommendations Section -->
+            <div class="card">
+                <h2>Get Recommendations</h2>
+                <div class="form-group">
+                    <label>Duration (hours):</label>
+                    <input type="number" id="recDuration" value="2" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label>Accessibility Required:</label>
+                    <input type="checkbox" id="recAccessibility">
+                </div>
+                <button class="btn btn-primary full-width" onclick="getRecommendations()">Get Recommendations</button>
+                <div id="recommendations" class="recommendations-container"></div>
+            </div>
+
+            <!-- Model Predictions Section -->
+            <div class="card">
+                <h2>ML Model Predictions</h2>
+                <div class="form-group">
+                    <label>Model Type:</label>
+                    <select id="modelType">
+                        <option value="xgboost">XGBoost</option>
+                        <option value="lstm">LSTM</option>
+                        <option value="transformer">Transformer</option>
+                        <option value="gnn">GNN</option>
+                    </select>
+                </div>
+                <button class="btn btn-secondary full-width" onclick="getModelMetrics()">View Metrics</button>
+                <div id="modelMetrics" class="metrics-container"></div>
+            </div>
+        </div>
+
+        <!-- Parking Patterns Visualization -->
+        <div class="card full-width">
+            <h2>Historical Parking Patterns</h2>
+            <button class="btn btn-secondary" onclick="loadPatterns()">Load Patterns</button>
+            <div class="charts-grid">
+                <div id="peakHoursChart"></div>
+                <div id="zoneOccupancyChart"></div>
+                <div id="weekdayPatternChart"></div>
+                <div id="revenueChart"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Parking Finder System v1.0.0 | AI-Powered Parking Detection</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

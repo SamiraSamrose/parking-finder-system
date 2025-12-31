@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Parking Finder System</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Parking Finder Dashboard</h1>
+            <p class="subtitle">Real-Time System Overview and Metrics</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/dashboard" class="nav-link active">Dashboard</a>
+            <a href="/analytics" class="nav-link">Analytics</a>
+            <a href="/monitoring" class="nav-link">Monitoring</a>
+        </nav>
+
+        <div class="status-bar" id="statusBar">
+            <div class="status-item">
+                <span class="status-label">System Status:</span>
+                <span class="status-value" id="systemStatus">Online</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Active Users:</span>
+                <span class="status-value" id="activeUsers">1,234</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Last Update:</span>
+                <span class="status-value" id="lastUpdate">-</span>
+            </div>
+        </div>
+
+        <div class="metrics-summary">
+            <div class="metric-card">
+                <div class="metric-label">Total Parking Spots</div>
+                <div class="metric-value" id="totalSpots">50,000</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Available Now</div>
+                <div class="metric-value" id="availableSpots">13,500</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Occupancy Rate</div>
+                <div class="metric-value" id="occupancyRate">73%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Avg Response Time</div>
+                <div class="metric-value" id="avgResponse">145ms</div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="card">
+                <h2>Real-Time Occupancy</h2>
+                <div id="realtimeOccupancyChart"></div>
+            </div>
+
+            <div class="card">
+                <h2>Top Zones by Demand</h2>
+                <div id="topZonesChart"></div>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <h2>System Performance</h2>
+            <div id="performanceChart"></div>
+        </div>
+
+        <div class="card full-width">
+            <h2>Recent Activity</h2>
+            <div id="activityLog"></div>
+        </div>
+
+        <footer>
+            <p>Parking Finder System Dashboard v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

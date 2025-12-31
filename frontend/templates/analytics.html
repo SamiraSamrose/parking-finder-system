@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Parking Finder</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analytics Dashboard</h1>
+            <p class="subtitle">Comprehensive Parking Data Analysis</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/analytics" class="nav-link active">Analytics</a>
+            <a href="/monitoring" class="nav-link">Monitoring</a>
+        </nav>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="loadAllAnalytics()">Load All Analytics</button>
+            <button class="btn btn-secondary" onclick="exportAnalytics()">Export Data</button>
+        </div>
+
+        <!-- ML Model Performance Comparison -->
+        <div class="card full-width">
+            <h2>ML Model Performance Comparison</h2>
+            <div class="charts-grid">
+                <div id="modelAccuracyChart"></div>
+                <div id="modelLatencyChart"></div>
+            </div>
+            <div id="modelComparisonTable" class="table-container"></div>
+        </div>
+
+        <!-- Occupancy Analysis -->
+        <div class="card full-width">
+            <h2>Occupancy Analysis</h2>
+            <div class="charts-grid">
+                <div id="occupancyHourlyChart"></div>
+                <div id="occupancyZoneChart"></div>
+                <div id="occupancyHeatmapChart"></div>
+            </div>
+        </div>
+
+        <!-- Revenue and Cost Analysis -->
+        <div class="card full-width">
+            <h2>Revenue and Cost Analysis</h2>
+            <div class="charts-grid">
+                <div id="revenueByZoneChart"></div>
+                <div id="costDistributionChart"></div>
+                <div id="turnoverRateChart"></div>
+            </div>
+        </div>
+
+        <!-- Traffic Correlation Analysis -->
+        <div class="card full-width">
+            <h2>Traffic Correlation Analysis</h2>
+            <div class="charts-grid">
+                <div id="trafficOccupancyScatter"></div>
+                <div id="weatherImpactChart"></div>
+            </div>
+        </div>
+
+        <!-- Predictive Analytics -->
+        <div class="card full-width">
+            <h2>Predictive Analytics</h2>
+            <div class="form-group">
+                <label>Forecast Horizon (minutes):</label>
+                <input type="number" id="forecastHorizon" value="60" step="15">
+            </div>
+            <button class="btn btn-primary" onclick="generateForecast()">Generate Forecast</button>
+            <div class="charts-grid">
+                <div id="forecastChart"></div>
+                <div id="confidenceIntervalChart"></div>
+            </div>
+        </div>
+
+        <!-- Feature Importance Analysis -->
+        <div class="card full-width">
+            <h2>Feature Importance Analysis</h2>
+            <button class="btn btn-secondary" onclick="loadFeatureImportance()">Load Feature Importance</button>
+            <div id="featureImportanceChart"></div>
+            <div id="ablationStudyChart"></div>
+        </div>
+
+        <!-- Geospatial Analysis -->
+        <div class="card full-width">
+            <h2>Geospatial Analysis</h2>
+            <button class="btn btn-secondary" onclick="loadGeospatialData()">Load Geospatial Data</button>
+            <div class="charts-grid">
+                <div id="spatialDistributionChart"></div>
+                <div id="clusteringChart"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Analytics Dashboard | Parking Finder System</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/analytics.js"></script>
+</body>
+</html>
