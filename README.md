@@ -7,7 +7,7 @@ Intelligent Parking Space Detection with Real-Time AI/ML Integration
 The Parking Finder System is a comprehensive parking management solution that leverages advanced machine learning models, real-time streaming data and cloud integrations to provide intelligent parking recommendations. The system integrates multiple technologies including XGBoost, LSTM, Transformer networks, Graph Neural Networks, Kafka streaming, Datadog monitoring, ElevenLabs voice interface and Google Cloud services.
 
 ## Links
-- **Sorce Code**:
+- **Sorce Code**: https://github.com/SamiraSamrose/parking-finder-system
 - **Video Demo**: https://youtu.be/acrzkcN8YpE
 - **Colab Notebook**: https://colab.research.google.com/drive/18nkYfGweBMTkAe0fZwNCtyhfCIEcHk2K?usp=sharing
 
